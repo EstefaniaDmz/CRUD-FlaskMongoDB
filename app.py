@@ -19,9 +19,9 @@ def searchTarea():
     buscar = request.form['busqueda']
     if buscar:
         tareasRecibidas = tareas.find({'nombre': buscar})
+        return render_template('index.html', tareas=tareasRecibidas)
     else:
-        tareasRecibidas = tareas.find()
-    return render_template('index.html', tareas=tareasRecibidas)
+        return redirect(url_for('index'))
 
 @app.route('/createTarea')
 def createTarea():
