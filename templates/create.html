@@ -1,0 +1,19 @@
+{% include 'head.html' %}
+<br>
+<h1 style="text-align: center;">Agregar tarea</h1>
+<form action="/tarea" method="post" class="form-label">
+    <h5>Nombre</h5>
+    <input type="text" class="form-control" name="nombre" autocomplete="off">
+    <h5>Descripcion</h5>
+    <input type="text" class="form-control" name="descripcion" autocomplete="off">
+    <h5>Fecha de entrega</h5>
+    <input type="date" class="form-control" name="fechaEntrega">
+    <h5>Materia</h5>
+    <input type="text" class="form-control" name="materia" autocomplete="off">
+    <br>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <a class="btn btn-secondary" style="width: 200px; margin-right: 1.5em;" href="/">Cancelar</a>
+        <input class="btn btn-primary" style="width: 200px;" type="submit" value="Aceptar"/>
+    </div>
+</form>
+{% include 'foot.html' %}

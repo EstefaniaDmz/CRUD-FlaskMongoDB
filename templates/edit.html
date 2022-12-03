@@ -1,0 +1,21 @@
+{% include 'head.html' %}
+<br>
+{% for r in row %}
+<h1 style="text-align: center;">Modificar tarea {{r.nombre}}</h1>
+<form action="/tareaUpdate/{{r._id}}" method="post" class="form-label" autocomplete="off">
+    <h5>Nombre</h5>
+    <input type="text" class="form-control" name="nombre" value="{{r.nombre}}" autocomplete="off">
+    <h5>Descripcion</h5>
+    <input type="text" class="form-control" name="descripcion" value="{{r.descripcion}}" autocomplete="off">
+    <h5>Fecha de entrega</h5>
+    <input type="text" class="form-control" name="fechaEntrega" value="{{r.fechaEntrega}}" autocomplete="off">
+    <h5>Materia</h5>
+    <input type="text" class="form-control" name="materia" value="{{r.materia}}" autocomplete="off">
+{% endfor %}
+    <br>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <a class="btn btn-secondary" style="width: 200px; margin-right: 1.5em;" href="/">Cancelar</a>
+        <input class="btn btn-primary" style="width: 200px;" type="submit" value="Aceptar"/>
+    </div>
+</form>
+{% include 'foot.html' %}
